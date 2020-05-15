@@ -1,135 +1,180 @@
 @font-face {
-  font-family: "Ralewat-bold";
-  src: url(../../fonts/Raleway-Bold.ttf);
+  font-family: "Raleway-bold";
+  src: url(../fonts/Raleway-Bold.ttf);
 }
 
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway-bold";
+  background-color: #333;
 }
 
 a {
   text-decoration: none;
 }
 
-#main {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/beach-bridge-dark-clouds-dawn.jpg") no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-h2 {
-  color: white;
-  background: url("../img/beach-bridge-dark-clouds-dawn.jpg") no-repeat;
-  background-attachment: fixed;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translate(-10%, -50%);
-  z-index: 2;
-  font-size: 8em;
-  text-shadow: 7px 7px 12px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 1440px) {
-  h2 {
-    font-size: 6em;
-    right: 20%;
-  }
-}
-
-.inner {
-  font-family: "Raleway-bold";
-  font-weight: bold;
-  font-size: 2.5em;
-  color: white;
-  background: url("../img/beach-bridge-dark-clouds-dawn.jpg") no-repeat;
-  background-attachment: fixed;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  top: 30%;
-  right: 40%;
-  transform: translate(-40%, -30%);
-  z-index: 2;
-}
-
-@media (max-width: 1440px) {
-  .inner {
-    font-size: 1.5em;
-    right: 45.5%;
-  }
-}
-
 header {
   width: 100%;
   height: 7vh;
   display: flex;
-  position: fixed;
-  z-index: 1;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  z-index: 3;
 }
 
-header .navbar {
+.navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  margin-right: 7%;
+}
+
+.navbar .nav-item {
   list-style: none;
 }
 
-header .nav-link {
-  font-size: 1.1em;
+.navbar .nav-item .nav-link {
   padding: 10px 20px;
   color: #333;
+  position: relative;
 }
 
-@media (max-width: 1440px) {
-  header .nav-link {
-    font-size: .9em;
+.navbar .nav-item .nav-link::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .nav-item .nav-link:hover::after {
+  width: 70%;
+}
+
+.slider-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#slider {
+  width: 100%;
+  height: 100%;
+}
+
+.slide1 {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/action-adventure-aerial-aerial-shot-312105.jpg") no-repeat;
+}
+
+.slide2 {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/beach-bridge-dark-clouds-dawn.jpg") no-repeat;
+}
+
+.slide3 {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/beach-water-steps-sand-17727.jpg") no-repeat;
+}
+
+.slide4 {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/clouds-dawn-nature-ocean-561463.jpg") no-repeat;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+#content_slide1 {
+  color: #fff;
+  background: url("../img/action-adventure-aerial-aerial-shot-312105.jpg") no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#content_slide2 {
+  background: url("../img/beach-bridge-dark-clouds-dawn.jpg") no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#content_slide3 {
+  background: url("../img/beach-water-steps-sand-17727.jpg") no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#content_slide4 {
+  background: url("../img/clouds-dawn-nature-ocean-561463.jpg") no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h2 {
+  position: absolute;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  width: 30%;
+  top: 50%;
+  right: 17%;
+  transform: translate(-17%, -50%);
+  z-index: 3;
+}
+
+@media (max-width: 1380px) {
+  h2 {
+    font-size: 2.8rem;
+    right: 13%;
   }
 }
 
 .content {
   width: 40%;
   height: 100%;
+  background-color: #fff;
   position: absolute;
-  top: 0;
   right: 0;
-  background: white;
+  top: 0;
 }
 
 .cta {
+  font-size: 1.9rem;
+  padding: 15px 0;
   position: absolute;
   display: block;
-  font-size: 1.7em;
-  padding: 20px 0;
-  text-align: right;
-  width: 60%;
+  width: 40%;
   bottom: 20%;
-  left: 0%;
+  left: 0;
   transform: translateY(-20%);
-  font-weight: bold;
+  text-align: right;
   color: #333;
-}
-
-@media (max-width: 1440px) {
-  .cta {
-    font-size: 1.2em;
-  }
+  transition: all 0.5s ease-in-out;
 }
 
 .cta::before {
@@ -139,45 +184,100 @@ header .nav-link {
   background-color: #333;
   position: absolute;
   bottom: -10%;
-  left: 0%;
+  left: 0;
 }
 
-.controls {
-  width: 15%;
-  height: 5vh;
+.cta:hover {
+  padding: 15px 30px;
+  border: 1px solid #333;
+}
+
+.cta:hover::before {
+  display: none;
+}
+
+@media (max-width: 1380px) {
+  .cta {
+    font-size: 1.3rem;
+  }
+}
+
+#prev {
+  z-index: 3;
   position: absolute;
   bottom: 5%;
   left: 3%;
-  transform: translate(-3%, -5%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+}
+
+#prev::after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  right: -40%;
+  top: 45%;
+}
+
+@media (max-width: 1380px) {
+  #prev::after {
+    width: 40%;
+    right: -30%;
+  }
 }
 
 #next {
-  background: none;
-  border: none;
-  outline: none;
-  color: white;
-  font-size: 0.9em;
-  cursor: pointer;
-  padding: 15px 30px;
-  text-transform: uppercase;
-}
-
-#next:focus {
-  outline: none;
+  z-index: 3;
+  position: absolute;
+  bottom: 5%;
+  left: 13%;
 }
 
 #next::before {
   content: "";
-  width: 15%;
-  height: 1px;
-  background-color: white;
+  width: 50%;
+  height: 2px;
+  background: #fff;
   position: absolute;
-  left: 50%;
-  bottom: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  left: -40%;
+  top: 45%;
+}
+
+@media (max-width: 1380px) {
+  #next::before {
+    width: 40%;
+    left: -30%;
+  }
+}
+
+#prev,
+#next {
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0.5;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+@media (max-width: 1380) {
+  #prev,
+  #next {
+    font-size: 0.7rem;
+  }
+}
+
+#prev:focus,
+#next:focus {
+  outline: none;
+}
+
+#prev:hover,
+#next:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=main.css.map */

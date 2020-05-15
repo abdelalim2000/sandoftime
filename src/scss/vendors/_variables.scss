@@ -1,19 +1,32 @@
 //variables
-$main-color: white;
-$sec-color: #333;
+$prim_color: #fff;
+$sec_color: #333;
 
-//global
+//mixins
+@mixin mq($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+//fonts
+@font-face {
+  font-family: "Raleway-bold";
+  src: url(../fonts/Raleway-Bold.ttf);
+}
+
+//global variables
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Raleway", sans-serif;
-  
+  font-family: "Raleway-bold";
+  background-color: $sec_color;
 }
 
 a {

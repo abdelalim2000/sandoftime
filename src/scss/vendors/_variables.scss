@@ -1,0 +1,21 @@
+//variables
+$main-color: white;
+$sec-color: #333;
+
+//global
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  
+}
+
+a {
+  text-decoration: none;
+}
